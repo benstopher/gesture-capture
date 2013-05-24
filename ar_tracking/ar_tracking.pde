@@ -24,6 +24,7 @@ ArrayList[] markerPoints;
 ArrayList[] markerTimes;
 
 boolean showPaths = false;
+boolean showCam = true;
 
 float coordScale;
 
@@ -97,6 +98,8 @@ void draw(){
 		scale( -1, 1 );
 		translate( -width, 0, 0 );		
 
+		int foundMarkers = 0;
+
 		for( int i = 0; i < numMarkers; i++ ){
 			if( nya.isExistMarker(i) ){	
 				PVector[] corners = nya.getMarkerVertex2D( i );
@@ -109,14 +112,22 @@ void draw(){
 					}
 				endShape();
 
+				foundMarkers++;
 			}
 		}
-
 		popMatrix(); //unflip/unmirror
+
+		println( "found " + foundMarkers + "/" + numMarkers + " markers." );
+
 	}
 
-	if( showPaths ){
-		background( 0 );
+
+
+	if( showCam ){
+		image( cam, 0, 0 );
+	}
+
+	if( showPaths ){	
 		strokeWeight( 5 );
 		//flip/mirror
 		pushMatrix();
@@ -138,6 +149,9 @@ void draw(){
 void keyPressed(){
 	if( key == ' ' ){
 		showPaths = !showPaths;
+	}
+	if( key == 'c' ){
+		showCam = !showCam;
 	}
 	if( key == 'i' ){
 		saveFrame();
