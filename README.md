@@ -12,7 +12,7 @@ Uses the patterns from the [ARToolkit PatternMaker](http://www.cs.utah.edu/gdc/p
 
 The data is saved to a timestamped folder in ar_tracking/data/results/ with a .csv file per marker tracked. The data has 4 columns:
 
-*timestamp ( the time of this position )
+* timestamp ( the time of this position )
 * x ( the x coordinate of this marker at that time)
 * y ( the y coordinate of this marker at that time)
 * z ( the z coordinate of this marker at that time - not currently reported, is always 0.0 )
