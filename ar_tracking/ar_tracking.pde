@@ -25,8 +25,16 @@ ArrayList[] markerTimes;
 
 boolean showPaths = false;
 
+float coordScale;
+
 void setup(){
 	size( 640, 480, OPENGL );
+
+	if( width > height ){
+		coordScale = width;
+	} else {
+		coordScale = height;
+	}
 
 	Date date = new Date();
 	startTimestamp = date.getTime();	
@@ -34,8 +42,6 @@ void setup(){
 	savePath = dataPath( "results/" + startTimestamp + "/");
 	camPara = sketchPath("inc/camera_para.dat");
 	patternPath = dataPath("patterns/patt");
-
-	println( savePath );	
 	
 	cam = new Capture( this, 640, 480 );
 	cam.start();
@@ -141,6 +147,10 @@ void keyPressed(){
 	}
 }
 
+float scaleCoord( float raw ){
+	return raw / coordScale;
+}
+
 void saveFiles(){
 	for( int i = 0; i < markerPoints.length; i++ ){
 		ArrayList points = markerPoints[i];
@@ -151,9 +161,9 @@ void saveFiles(){
 			for( int j = 0; j < points.size(); j++ ){
 				PVector pt = (PVector) points.get( j );
 				long t = (Long) times.get( j );
-				csv[j+1] = t + "," + pt.x + "," + pt.y + "," + pt.z;
+				csv[j+1] = t + "," + scaleCoord( pt.x ) + "," + scaleCoord( pt.y ) + "," + scaleCoord( pt.z );
 			}
-			saveStrings( savePath + "marker-" + i + ".csv", csv );
+			saveStrings( savePath + "/marker-" + i + ".csv", csv );
 		}
 	}
 }
