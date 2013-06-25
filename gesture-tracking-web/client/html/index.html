@@ -1,0 +1,95 @@
+<head>
+	<title>Gesture Tracking</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+	<ul id="modes">
+		<li class="mode">
+			{{> introduction}}
+		</li>
+		<li class="mode off">			
+			{{> gesture-capture}}
+		</li>
+		<li class="mode off">
+			{{> gesture-results}}
+		</li>
+		<li class="mode off">
+			{{> gesture-analysis}}
+		</li>
+	</ul>
+</body>
+
+<template name="gesture-capture">
+	<a href="" class="tab">
+		<h1>Capture</h1>
+	</a>
+	<article id="gesture-capture" class="content section section--capture">
+		<div class="video-container column column--two">
+			
+		</div>
+		<div class="controls column">
+			<h2>Controls</h2>
+			<a href="" class="toggle toggle-capture">Capture</a>
+			<a href="" class="toggle toggle-markers">Show Markers</a>
+			<a href="" class="toggle toggle-paths">Show Paths</a>
+		</div>
+	</article>
+</template>
+
+<template name="gesture-results">
+	<a href="" class="tab">
+		<h1>Results</h1>
+	</a>
+	<article id="gesture-results" class="content section section--results">
+		
+	</article>
+</template>
+
+<template name="gesture-analysis">
+	<a href="" class="tab">
+		<h1>Analysis</h1>
+	</a>
+	<article class="content section section--analysis">
+		
+	</article>
+</template>
+
+<template name="introduction">
+	<header class="section section--introduction">
+		<div class="column prose">
+			<h1>Introduction</h1>
+			<p>
+				Introductory <a href="#">stuff goes</a> here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, minus, praesentium, cumque, quam nulla expedita laboriosam accusamus commodi quis voluptatibus amet autem doloribus atque. At veritatis laudantium tenetur impedit voluptate?
+			</p>
+			<p>
+				Introductory stuff goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, minus, praesentium, cumque, quam nulla expedita laboriosam accusamus commodi quis voluptatibus amet autem doloribus atque. At veritatis laudantium tenetur impedit voluptate?
+			</p>
+			<h2>Instructions</h2>
+			<p>
+				Instructions go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, quibusdam, ex, ab sequi itaque reprehenderit facere reiciendis facilis error perspiciatis distinctio nesciunt eos dignissimos placeat nulla numquam repellat eum quae.
+			</p>
+			
+		</div>
+		<div class="column prose">
+			<h1>Introduction</h1>
+			<p>
+				Introductory stuff goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, minus, praesentium, cumque, quam nulla expedita laboriosam accusamus commodi quis voluptatibus amet autem doloribus atque. At veritatis laudantium tenetur impedit voluptate?
+			</p>
+			<h2>Instructions</h2>
+			<p>
+				Instructions go here. Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. In, quibusdam, ex, ab sequi itaque reprehenderit facere reiciendis facilis error perspiciatis distinctio nesciunt eos dignissimos placeat nulla numquam repellat eum quae.
+			</p>
+		</div>
+		<div class="column prose">
+			<h1>Introduction</h1>
+			<p>
+				Introductory stuff goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, minus, praesentium, cumque, quam nulla expedita laboriosam accusamus commodi quis voluptatibus amet autem doloribus atque. At veritatis laudantium tenetur impedit voluptate?
+			</p>
+			<h2>Instructions</h2>
+			<p>
+				Instructions go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, quibusdam, ex, ab sequi itaque reprehenderit facere reiciendis facilis error perspiciatis distinctio nesciunt eos dignissimos placeat nulla numquam repellat eum quae.
+			</p>
+		</div>
+	</header>
+</template>

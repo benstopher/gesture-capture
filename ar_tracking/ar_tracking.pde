@@ -23,6 +23,9 @@ MultiMarker nya;
 ArrayList[] markerPoints;
 ArrayList[] markerTimes;
 
+int outputCounter;
+long lastOutputTime;
+
 boolean showPaths = false;
 boolean showCam = true;
 
@@ -40,6 +43,9 @@ void setup(){
 	Date date = new Date();
 	startTimestamp = date.getTime();	
 
+	outputCounter = 0;
+	lastOutputTime = startTimestamp;
+
 	savePath = dataPath( "results/" + startTimestamp + "/");
 	camPara = sketchPath("inc/camera_para.dat");
 	patternPath = dataPath("patterns/patt");
@@ -48,7 +54,7 @@ void setup(){
 	cam.start();
 
 	nya = new MultiMarker( this, arWidth, arHeight, camPara, NyAR4PsgConfig.CONFIG_DEFAULT );
-	nya.setLostDelay( 1 ); //delay until lost marker is hidden - set v low here
+	nya.setLostDelay( 100 ); //delay until lost marker is hidden - set v low here
 
 	String[] patterns = loadPatternFilenames( patternPath ) ;	
 	for( int i = 0; i < numMarkers; i++ ){
@@ -113,36 +119,46 @@ void draw(){
 				endShape();
 
 				foundMarkers++;
+			} else {
+				
 			}
 		}
 		popMatrix(); //unflip/unmirror
 
 		println( "found " + foundMarkers + "/" + numMarkers + " markers." );
 
-	}
 
-
-
-	if( showCam ){
-		image( cam, 0, 0 );
-	}
-
-	if( showPaths ){	
-		strokeWeight( 5 );
-		//flip/mirror
-		pushMatrix();
-		scale( -1, 1 );
-		translate( -width, 0, 0 );
-		for( int i = 0; i < markerPoints.length; i++ ){
-			ArrayList points = markerPoints[i];
-			stroke( clrs[i] );
-			for( int j = 1; j < points.size(); j++ ){
-				PVector here = (PVector) points.get( j - 1);
-				PVector there = (PVector) points.get( j );
-				line( here.x, here.y, there.x, there.y );
-			}
+		if( showCam ){
+			pushMatrix();
+			scale( -1, 1 );
+			translate( -width, 0, 0 );
+			image( cam, 0, 0 );
+			popMatrix(); //unflip/unmirror
 		}
-		popMatrix(); //unflip/unmirror
+
+		if( showPaths ){	
+			strokeWeight( 5 );
+			//flip/mirror
+			pushMatrix();
+			scale( -1, 1 );
+			translate( -width, 0, 0 );
+			for( int i = 0; i < markerPoints.length; i++ ){
+				ArrayList points = markerPoints[i];
+				stroke( clrs[i] );
+				for( int j = 1; j < points.size(); j++ ){
+					PVector here = (PVector) points.get( j - 1);
+					PVector there = (PVector) points.get( j );
+					line( here.x, here.y, there.x, there.y );
+				}
+			}
+			popMatrix(); //unflip/unmirror
+		}			
+		if( currentTimestamp - lastOutputTime > 5000 ){
+
+			saveMilestone();
+			lastOutputTime = currentTimestamp;
+		}
+
 	}
 }
 
@@ -165,20 +181,24 @@ float scaleCoord( float raw ){
 	return raw / coordScale;
 }
 
+void saveMilestone(){
+	saveFrame( savePath + "/step-" + outputCounter + "/screen.png" );
+	saveFiles();
+	outputCounter++;
+}
+
 void saveFiles(){
 	for( int i = 0; i < markerPoints.length; i++ ){
 		ArrayList points = markerPoints[i];
 		ArrayList times = markerTimes[i];
-		if( points.size() > 0 ){
-			String[] csv = new String[ points.size() + 1 ];
-			csv[0] = "timestamp,x,y,z";
-			for( int j = 0; j < points.size(); j++ ){
-				PVector pt = (PVector) points.get( j );
-				long t = (Long) times.get( j );
-				csv[j+1] = t + "," + scaleCoord( pt.x ) + "," + scaleCoord( pt.y ) + "," + scaleCoord( pt.z );
-			}
-			saveStrings( savePath + "/marker-" + i + ".csv", csv );
+		String[] csv = new String[ points.size() + 1 ];
+		csv[0] = "timestamp,x,y,z";
+		for( int j = 0; j < points.size(); j++ ){
+			PVector pt = (PVector) points.get( j );
+			long t = (Long) times.get( j );
+			csv[j+1] = t + "," + scaleCoord( pt.x ) + "," + scaleCoord( pt.y ) + "," + scaleCoord( pt.z );
 		}
+		saveStrings( savePath + "/step-" + outputCounter + "/marker-" + i + " .csv", csv );
 	}
 }
 

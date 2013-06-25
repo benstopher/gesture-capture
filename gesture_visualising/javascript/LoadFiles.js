@@ -1,4 +1,4 @@
-var LoadCSV = function( input, list, onRead ){
+var LoadFiles = function( input, list, onRead ){
 	var that = this;
 	this.fileInput = input;
 	this.fileList = list;
@@ -11,7 +11,10 @@ var LoadCSV = function( input, list, onRead ){
 	}
 };
 
-LoadCSV.prototype ={
+LoadFiles.prototype ={
+	wipe: function(){
+		this.files = [];
+	},
 	handleSelectedFiles: function( event ){
 		var that = this;
 		var selectedFiles = event.target.files;
@@ -20,18 +23,28 @@ LoadCSV.prototype ={
 		if( selectedFiles.length > 0 ){
 			for( var i = 0; i < selectedFiles.length; i++ ){
 				var file = selectedFiles[ i ];
-				if( file.type === 'text/csv' ){
+				if( file.type === 'text/csv' || file.type === 'image/png' || file.type === 'image/jpeg'){
 					toReadCount++;
 					var reader = new FileReader();
       				reader.onload = ( function( thisFile ){
 						return function(e) {
-							that.files.push({
-								'name': thisFile.name,
-								'contents': CSV.parse( e.target.result )
-							});
+							if( thisFile.type === 'text/csv' ){
+								that.files.push({
+									'type': 'csv',
+									'name': thisFile.name,
+									'contents': CSV.parse( e.target.result )
+								});
+							} else {
+								that.files.push({
+									'type': 'img',
+									'name': thisFile.name,
+									'contents': e.target.result
+								});
+							}
 							readCount++;
 							if( readCount === toReadCount ){
 								that.callback( that.files );
+								that.wipe();
 							}
 						}
 					})( file );

@@ -1,0 +1,361 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 17, ../sass/screen.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 22, ../sass/screen.scss */
+a {
+  text-decoration: none;
+  color: blue;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+/* line 27, ../sass/screen.scss */
+a:hover {
+  border-bottom: 2px solid blue;
+}
+
+/* line 32, ../sass/screen.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: inconsolata, monospace;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* line 42, ../sass/screen.scss */
+.column {
+  float: left;
+  width: 30%;
+  margin-right: 3%;
+  max-width: 480px;
+  min-width: 240px;
+  height: 100%;
+}
+/* line 49, ../sass/screen.scss */
+.column.column--two {
+  width: 63%;
+  max-width: 960px;
+  min-width: 480px;
+}
+
+/* line 56, ../sass/screen.scss */
+.toggle {
+  display: block;
+  border: 3px solid #c3b9c1;
+  color: #c3b9c1;
+  padding: 0 .6em;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+/* line 63, ../sass/screen.scss */
+.toggle:hover {
+  border: 3px solid #433a41;
+  color: #433a41;
+}
+/* line 67, ../sass/screen.scss */
+.toggle.on {
+  color: blue;
+  border: 3px solid blue;
+}
+
+/* line 74, ../sass/screen.scss */
+.controls h1, .controls h2, .controls h3, .controls h4, .controls h5, .controls h6 {
+  margin-bottom: 1em;
+}
+
+/* line 79, ../sass/screen.scss */
+.prose {
+  line-height: 1.4em;
+}
+/* line 81, ../sass/screen.scss */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  margin-bottom: 1.4em;
+}
+/* line 84, ../sass/screen.scss */
+.prose p {
+  margin-bottom: 1.4em;
+}
+
+/* line 89, ../sass/screen.scss */
+#modes {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 93, ../sass/screen.scss */
+#modes .mode {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fcfafc;
+  -webkit-transition: -webkit-transform 1s ease-out, right 1s ease-out;
+  -moz-transition: -moz-transform 1s ease-out, right 1s ease-out;
+  -o-transition: -o-transform 1s ease-out, right 1s ease-out;
+  transition: transform 1s ease-out, right 1s ease-out;
+}
+/* line 102, ../sass/screen.scss */
+#modes .mode .tab {
+  display: block;
+  height: 100%;
+  width: 2.4em;
+  position: absolute;
+  left: 0;
+  color: #433a41;
+  cursor: pointer;
+  -webkit-transition: border-left 0.01s 1s;
+  -webkit-transition-delay: ease-out;
+  -moz-transition: border-left 0.01s 1s ease-out;
+  -o-transition: border-left 0.01s 1s ease-out;
+  transition: border-left 0.01s 1s ease-out;
+  border-left: 1px solid transparent;
+  border-right: 1px solid #433a41;
+}
+/* line 113, ../sass/screen.scss */
+#modes .mode .tab:hover {
+  background: blue;
+  color: #FFFFFF;
+}
+/* line 117, ../sass/screen.scss */
+#modes .mode .tab h1 {
+  text-transform: uppercase;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  position: absolute;
+  height: 2.4em;
+  top: 0;
+  left: 0;
+  line-height: 2.4em;
+  padding-right: 1.8em;
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -o-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transform: rotate(-90deg) translateY(50%) translateX(-100%);
+  -moz-transform: rotate(-90deg) translateY(50%) translateX(-100%);
+  -ms-transform: rotate(-90deg) translateY(50%) translateX(-100%);
+  -o-transform: rotate(-90deg) translateY(50%) translateX(-100%);
+  transform: rotate(-90deg) translateY(50%) translateX(-100%);
+}
+/* line 128, ../sass/screen.scss */
+#modes .mode .tab h1:before {
+  font-size: 1.6em;
+  display: block;
+  right: 0;
+  position: absolute;
+  content: '+';
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 139, ../sass/screen.scss */
+#modes .mode .content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  left: 2.4em;
+  right: 0;
+  height: 100%;
+  overflow: auto;
+}
+/* line 150, ../sass/screen.scss */
+#modes .mode.off .tab {
+  -webkit-transition: border-right 0.01s 1s;
+  -webkit-transition-delay: ease-out;
+  -moz-transition: border-right 0.01s 1s ease-out;
+  -o-transition: border-right 0.01s 1s ease-out;
+  transition: border-right 0.01s 1s ease-out;
+  border-right: 1px solid transparent;
+  border-left: 1px solid #433a41;
+}
+/* line 154, ../sass/screen.scss */
+#modes .mode.off .tab h1:before {
+  display: none;
+}
+/* line 158, ../sass/screen.scss */
+#modes .mode.off .content {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 166, ../sass/screen.scss */
+#modes .mode:nth-child(2) {
+  width: -webkit-calc(100% - ( 0em) );
+  width: -moz-calc(100% - ( 0em) );
+  width: calc(100% - ( 0em) );
+}
+/* line 176, ../sass/screen.scss */
+#modes .mode:nth-child(2).off {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  right: 7.2em;
+}
+/* line 182, ../sass/screen.scss */
+#modes .mode:nth-child(2) .content {
+  right: 4.8em;
+}
+/* line 166, ../sass/screen.scss */
+#modes .mode:nth-child(3) {
+  width: -webkit-calc(100% - ( 2.4em) );
+  width: -moz-calc(100% - ( 2.4em) );
+  width: calc(100% - ( 2.4em) );
+}
+/* line 176, ../sass/screen.scss */
+#modes .mode:nth-child(3).off {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  right: 4.8em;
+}
+/* line 182, ../sass/screen.scss */
+#modes .mode:nth-child(3) .content {
+  right: 2.4em;
+}
+/* line 166, ../sass/screen.scss */
+#modes .mode:nth-child(4) {
+  width: -webkit-calc(100% - ( 4.8em) );
+  width: -moz-calc(100% - ( 4.8em) );
+  width: calc(100% - ( 4.8em) );
+}
+/* line 176, ../sass/screen.scss */
+#modes .mode:nth-child(4).off {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  right: 2.4em;
+}
+/* line 182, ../sass/screen.scss */
+#modes .mode:nth-child(4) .content {
+  right: 0em;
+}
+
+/* line 192, ../sass/screen.scss */
+.section.section--introduction {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 3em 10.2em 3em 3em;
+  overflow: auto;
+}
+/* line 199, ../sass/screen.scss */
+.section.section--capture {
+  padding: 3em 10.2em 3em 3em;
+}
+/* line 201, ../sass/screen.scss */
+.section.section--capture .video-container {
+  position: relative;
+}
+/* line 203, ../sass/screen.scss */
+.section.section--capture .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+/* line 210, ../sass/screen.scss */
+.section.section--capture .video-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
