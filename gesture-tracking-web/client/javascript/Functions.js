@@ -1,5 +1,14 @@
 F = {};
 
+F.zeroPad = function( string, desiredLength ){
+	var string = string.toString();
+	var zeroes = '';
+	for( var i = 0; i < desiredLength; i++ ){
+		zeroes += '0';
+	}
+	return ( zeroes + string ).substr( desiredLength * -1 );
+}
+
 F.createCanvas = function( width, height ){
 	var canvas = {};
 

@@ -30,9 +30,11 @@
 		</div>
 		<div class="controls column">
 			<h2>Controls</h2>
-			<a href="" class="toggle toggle-capture">Capture</a>
-			<a href="" class="toggle toggle-markers">Show Markers</a>
-			<a href="" class="toggle toggle-paths">Show Paths</a>
+			<a class="has-loader toggle toggle-capture">Capture</a>
+			<a class="toggle toggle-markers">Show Markers</a>
+			<div class="debug-container">
+				
+			</div>
 		</div>
 	</article>
 </template>
@@ -42,8 +44,45 @@
 		<h1>Results</h1>
 	</a>
 	<article id="gesture-results" class="content section section--results">
-		
+		{{> gesture-results--list}}
 	</article>
+</template>
+
+<template name="gesture-results--list">
+	<header class="gesture-results--header">
+		<h1>{{ title.timestamp }} / {{ title.humanTime }}</h1>
+		<a class="toggle toggle-render has-loader">Render Results</a>
+	</header>
+	<ul class="gesture-results--list">
+		{{#each rows }}
+			<li class="gesture-results--snapshot-item">
+				<header class="meta">
+					<ul>
+						<li>{{ this.timestamp }} / {{ this.humanTime }}</li>
+					</ul>
+				</header>
+				<div class="data unprocessed">
+					<ul>
+						<li class="left1 dynamic has-loader">
+							<img src="{{ this.left1 }}" alt="" width="320" height="240">
+						</li>
+						<li class="right1 dynamic has-loader">
+							<img src="{{ this.right1 }}" alt="" width="320" height="240">
+						</li>
+						<li class="left2 dynamic has-loader">
+							<img src="{{ this.left2 }}" alt="" width="320" height="240">
+						</li>
+						<li class="right2 dynamic has-loader">
+							<img src="{{ this.right2 }}" alt="" width="320" height="240">
+						</li>
+						<li class="snapshotImage static">
+							<img src="{{ this.snapshot }}" alt="" width="320" height="240">
+						</li>
+					</ul>
+				</div>
+			</li>
+		{{/each}}
+	</ul>
 </template>
 
 <template name="gesture-analysis">

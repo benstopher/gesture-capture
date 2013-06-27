@@ -8,11 +8,20 @@
 
 $colour_grey: #c3b9c1;
 $colour_grey_dark: darken( $colour_grey, 50% );
-$colour_action: #0000FF;
+$colour_action: #294DFF;
 $colour_white: #FCFAFC;
 
 $tab_width: 2.4;
 $tab_count: 3;
+
+@-webkit-keyframes fullRotation {
+	0% {
+		@include transform( rotate( 0deg ) );
+	}
+	100% {
+		@include transform( rotate( 360deg ) );
+	}
+}
 
 *{
 	//outline: 1px solid red;
@@ -53,13 +62,49 @@ html, body{
 	}
 }
 
+.has-loader{
+	&.loading{
+		&:before{
+			position: absolute;
+			top: 50%;
+			margin-top: -0.6rem;
+			left: 50%;
+			margin-left: -0.6rem;
+			display: block;
+			content: '...';
+			height: 0;
+			width: 1.2rem;
+			padding-top: 1.2rem;
+			overflow: hidden;
+			border-radius: 50%;
+			background: $colour_grey;
+		}
+		&:after{
+			position: absolute;
+			display: block;
+			overflow: hidden;
+			content: '-';
+			width: 1.2rem;
+			height: 0;
+			padding-top: 2px;	
+			top: 50%;	
+			left: 50%;
+			margin-left: -0.6rem;		
+			background: $colour_white;
+			-webkit-animation: fullRotation 1s linear infinite;
+		}
+	}
+}
+
 .toggle{
+	position: relative;
 	display: block;
 	border: 3px solid $colour_grey;
 	color: $colour_grey;
 	padding: 0 .6em;
 	line-height: 2em;
 	margin-bottom: 1em;
+	cursor: pointer;
 	&:hover{
 		border: 3px solid $colour_grey_dark;
 		color: $colour_grey_dark;
@@ -67,6 +112,23 @@ html, body{
 	&.on{
 		color: $colour_action;
 		border: 3px solid $colour_action;
+	}
+	&.loading{
+		&:before{
+			left: auto;
+			margin-left: 0;
+			right: .6em;
+		}
+		&:after{
+			left: auto;
+			margin-left: 0;
+			right: .6em;
+		}
+	}
+	&.on.loading{
+		&:before{
+			background: $colour_action;
+		}
 	}
 }
 
@@ -189,30 +251,92 @@ html, body{
 }
 
 .section{
-	&.section--introduction{
-		@include box-sizing( border-box );
-		width:100%;
-		height: 100%;
-		padding: 3em  #{($tab_width * $tab_count) + 3}em 3em 3em;
-		overflow: auto;
+	width:100%;
+	height: 100%;
+	padding: 3em  #{($tab_width * $tab_count) + 3}em 3em 3em;
+	overflow: auto;
+}
+
+.section.section--capture{
+	.video-container{
+		position: relative;	
+		video{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+		}
+		canvas{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;	
+		}
 	}
-	&.section--capture{
-		padding: 3em  #{($tab_width * $tab_count) + 3}em 3em 3em;
-		.video-container{
-			position: relative;	
-			video{
-				position: absolute;
-				top: 0;
-				left: 0;
+	.controls{
+		.debug-container{
+			canvas{
 				width: 100%;
 				height: auto;
 			}
-			canvas{
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: auto;	
+		}
+	}
+}
+
+.section.section--results{
+	.gesture-results--header{
+		height: 3em;
+		border-bottom: 1px solid $colour_grey_dark;
+		margin-bottom: 3em;
+		h1{
+			float: left;
+			line-height: 3em;
+		}
+		.toggle{
+			float: right;
+			padding: 0 2.5em;
+		}
+	}
+	.gesture-results--list{
+		.gesture-results--snapshot-item{
+			margin-bottom: 3em;
+			overflow: hidden;
+			.meta{
+				height: 2em;
+				li{
+					display: inline-block;
+					&:after{
+						content: ' / ';
+						&:last-child{
+							content: '';
+						}
+					}
+				}
+			}
+			.data{
+				li{
+					float: left;
+					width: 17.6%;
+					margin-right: 3%;
+					min-height: 5em;
+					height: 100%;
+					position: relative;
+					&:last-child{
+						margin-right: 0;
+					}
+					img{
+						display: block;
+						width: 100%;
+						height: auto;
+					}
+				}
+				&.unprocessed{
+					.dynamic{
+						border: 1px solid $colour_grey;
+					}
+				}
 			}
 		}
 	}

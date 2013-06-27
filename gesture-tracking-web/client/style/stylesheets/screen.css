@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,69 +24,89 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 17, ../sass/screen.scss */
+@-webkit-keyframes fullRotation {
+  /* line 18, ../sass/screen.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 21, ../sass/screen.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* line 26, ../sass/screen.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 a {
   text-decoration: none;
-  color: blue;
+  color: #294dff;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
 }
-/* line 27, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 a:hover {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #294dff;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 html, body {
   width: 100%;
   height: 100%;
@@ -96,7 +116,7 @@ html, body {
   font-size: 14px;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .column {
   float: left;
   width: 30%;
@@ -105,58 +125,108 @@ html, body {
   min-width: 240px;
   height: 100%;
 }
-/* line 49, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 .column.column--two {
   width: 63%;
   max-width: 960px;
   min-width: 480px;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
+.has-loader.loading:before {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.6rem;
+  left: 50%;
+  margin-left: -0.6rem;
+  display: block;
+  content: '...';
+  height: 0;
+  width: 1.2rem;
+  padding-top: 1.2rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #c3b9c1;
+}
+/* line 82, ../sass/screen.scss */
+.has-loader.loading:after {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  content: '-';
+  width: 1.2rem;
+  height: 0;
+  padding-top: 2px;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.6rem;
+  background: #fcfafc;
+  -webkit-animation: fullRotation 1s linear infinite;
+}
+
+/* line 99, ../sass/screen.scss */
 .toggle {
+  position: relative;
   display: block;
   border: 3px solid #c3b9c1;
   color: #c3b9c1;
   padding: 0 .6em;
   line-height: 2em;
   margin-bottom: 1em;
+  cursor: pointer;
 }
-/* line 63, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .toggle:hover {
   border: 3px solid #433a41;
   color: #433a41;
 }
-/* line 67, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .toggle.on {
-  color: blue;
-  border: 3px solid blue;
+  color: #294dff;
+  border: 3px solid #294dff;
+}
+/* line 117, ../sass/screen.scss */
+.toggle.loading:before {
+  left: auto;
+  margin-left: 0;
+  right: .6em;
+}
+/* line 122, ../sass/screen.scss */
+.toggle.loading:after {
+  left: auto;
+  margin-left: 0;
+  right: .6em;
+}
+/* line 129, ../sass/screen.scss */
+.toggle.on.loading:before {
+  background: #294dff;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .controls h1, .controls h2, .controls h3, .controls h4, .controls h5, .controls h6 {
   margin-bottom: 1em;
 }
 
-/* line 79, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .prose {
   line-height: 1.4em;
 }
-/* line 81, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
   margin-bottom: 1.4em;
 }
-/* line 84, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .prose p {
   margin-bottom: 1.4em;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 #modes {
   width: 100%;
   height: 100%;
   position: relative;
 }
-/* line 93, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 #modes .mode {
   width: 100%;
   height: 100%;
@@ -169,7 +239,7 @@ html, body {
   -o-transition: -o-transform 1s ease-out, right 1s ease-out;
   transition: transform 1s ease-out, right 1s ease-out;
 }
-/* line 102, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #modes .mode .tab {
   display: block;
   height: 100%;
@@ -186,12 +256,12 @@ html, body {
   border-left: 1px solid transparent;
   border-right: 1px solid #433a41;
 }
-/* line 113, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 #modes .mode .tab:hover {
-  background: blue;
+  background: #294dff;
   color: #FFFFFF;
 }
-/* line 117, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 #modes .mode .tab h1 {
   text-transform: uppercase;
   display: -moz-inline-stack;
@@ -217,7 +287,7 @@ html, body {
   -o-transform: rotate(-90deg) translateY(50%) translateX(-100%);
   transform: rotate(-90deg) translateY(50%) translateX(-100%);
 }
-/* line 128, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 #modes .mode .tab h1:before {
   font-size: 1.6em;
   display: block;
@@ -230,7 +300,7 @@ html, body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 139, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 #modes .mode .content {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -244,7 +314,7 @@ html, body {
   height: 100%;
   overflow: auto;
 }
-/* line 150, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 #modes .mode.off .tab {
   -webkit-transition: border-right 0.01s 1s;
   -webkit-transition-delay: ease-out;
@@ -254,11 +324,11 @@ html, body {
   border-right: 1px solid transparent;
   border-left: 1px solid #433a41;
 }
-/* line 154, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 #modes .mode.off .tab h1:before {
   display: none;
 }
-/* line 158, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 #modes .mode.off .content {
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -267,13 +337,13 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 166, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #modes .mode:nth-child(2) {
   width: -webkit-calc(100% - ( 0em) );
   width: -moz-calc(100% - ( 0em) );
   width: calc(100% - ( 0em) );
 }
-/* line 176, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 #modes .mode:nth-child(2).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -282,17 +352,17 @@ html, body {
   transform: translateX(100%);
   right: 7.2em;
 }
-/* line 182, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #modes .mode:nth-child(2) .content {
   right: 4.8em;
 }
-/* line 166, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #modes .mode:nth-child(3) {
   width: -webkit-calc(100% - ( 2.4em) );
   width: -moz-calc(100% - ( 2.4em) );
   width: calc(100% - ( 2.4em) );
 }
-/* line 176, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 #modes .mode:nth-child(3).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -301,17 +371,17 @@ html, body {
   transform: translateX(100%);
   right: 4.8em;
 }
-/* line 182, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #modes .mode:nth-child(3) .content {
   right: 2.4em;
 }
-/* line 166, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #modes .mode:nth-child(4) {
   width: -webkit-calc(100% - ( 4.8em) );
   width: -moz-calc(100% - ( 4.8em) );
   width: calc(100% - ( 4.8em) );
 }
-/* line 176, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 #modes .mode:nth-child(4).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -320,30 +390,24 @@ html, body {
   transform: translateX(100%);
   right: 2.4em;
 }
-/* line 182, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #modes .mode:nth-child(4) .content {
   right: 0em;
 }
 
-/* line 192, ../sass/screen.scss */
-.section.section--introduction {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* line 253, ../sass/screen.scss */
+.section {
   width: 100%;
   height: 100%;
   padding: 3em 10.2em 3em 3em;
   overflow: auto;
 }
-/* line 199, ../sass/screen.scss */
-.section.section--capture {
-  padding: 3em 10.2em 3em 3em;
-}
-/* line 201, ../sass/screen.scss */
+
+/* line 261, ../sass/screen.scss */
 .section.section--capture .video-container {
   position: relative;
 }
-/* line 203, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 .section.section--capture .video-container video {
   position: absolute;
   top: 0;
@@ -351,11 +415,77 @@ html, body {
   width: 100%;
   height: auto;
 }
-/* line 210, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 .section.section--capture .video-container canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
+}
+/* line 280, ../sass/screen.scss */
+.section.section--capture .controls .debug-container canvas {
+  width: 100%;
+  height: auto;
+}
+
+/* line 289, ../sass/screen.scss */
+.section.section--results .gesture-results--header {
+  height: 3em;
+  border-bottom: 1px solid #433a41;
+  margin-bottom: 3em;
+}
+/* line 293, ../sass/screen.scss */
+.section.section--results .gesture-results--header h1 {
+  float: left;
+  line-height: 3em;
+}
+/* line 297, ../sass/screen.scss */
+.section.section--results .gesture-results--header .toggle {
+  float: right;
+  padding: 0 2.5em;
+}
+/* line 303, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item {
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+/* line 306, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .meta {
+  height: 2em;
+}
+/* line 308, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li {
+  display: inline-block;
+}
+/* line 310, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li:after {
+  content: ' / ';
+}
+/* line 312, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li:after:last-child {
+  content: '';
+}
+/* line 319, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .data li {
+  float: left;
+  width: 17.6%;
+  margin-right: 3%;
+  min-height: 5em;
+  height: 100%;
+  position: relative;
+}
+/* line 326, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .data li:last-child {
+  margin-right: 0;
+}
+/* line 329, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .data li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* line 336, ../sass/screen.scss */
+.section.section--results .gesture-results--list .gesture-results--snapshot-item .data.unprocessed .dynamic {
+  border: 1px solid #c3b9c1;
 }

@@ -32,6 +32,8 @@ Meteor.Router.add({
 
 Meteor.startup( function(){
 	
+	GT.nav.init();
+
 	GT.capture = new GestureCapture({
 		ele: '#gesture-capture'
 	});
@@ -46,27 +48,6 @@ Meteor.startup( function(){
 
 	GT.nav.goTo( Meteor.Router.page() );
 
-	$('.tab').click( function( e ){
-		e.preventDefault();
-		var $toActivate = $(this).closest('.mode'),
-			$others = $toActivate.closest('#modes').children('.mode'),
-			index = $toActivate.index();
-
-		if( $toActivate.hasClass( 'off' ) ){
-			$others.each( function( i ){
-				if( i < index && $(this).hasClass('off') ){
-					$(this).removeClass('off');
-				}
-			});
-			$toActivate.removeClass('off');
-		} else {
-			$others.each( function( i ){
-				if( i > index && $(this).hasClass('off') === false ){
-					$(this).addClass('off');
-				}
-			});
-			$toActivate.addClass('off')
-		}
-	});
+	
 
 });
