@@ -206,27 +206,31 @@ html, body {
 .controls h1, .controls h2, .controls h3, .controls h4, .controls h5, .controls h6 {
   margin-bottom: 1em;
 }
+/* line 140, ../sass/screen.scss */
+.controls ul li {
+  line-height: 1.4em;
+}
 
-/* line 141, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .prose {
   line-height: 1.4em;
 }
-/* line 143, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
   margin-bottom: 1.4em;
 }
-/* line 146, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 .prose p {
   margin-bottom: 1.4em;
 }
 
-/* line 151, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #modes {
   width: 100%;
   height: 100%;
   position: relative;
 }
-/* line 155, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 #modes .mode {
   width: 100%;
   height: 100%;
@@ -239,7 +243,7 @@ html, body {
   -o-transition: -o-transform 1s ease-out, right 1s ease-out;
   transition: transform 1s ease-out, right 1s ease-out;
 }
-/* line 164, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 #modes .mode .tab {
   display: block;
   height: 100%;
@@ -256,12 +260,12 @@ html, body {
   border-left: 1px solid transparent;
   border-right: 1px solid #433a41;
 }
-/* line 175, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #modes .mode .tab:hover {
   background: #294dff;
   color: #FFFFFF;
 }
-/* line 179, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 #modes .mode .tab h1 {
   text-transform: uppercase;
   display: -moz-inline-stack;
@@ -287,7 +291,7 @@ html, body {
   -o-transform: rotate(-90deg) translateY(50%) translateX(-100%);
   transform: rotate(-90deg) translateY(50%) translateX(-100%);
 }
-/* line 190, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 #modes .mode .tab h1:before {
   font-size: 1.6em;
   display: block;
@@ -300,7 +304,7 @@ html, body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 201, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 #modes .mode .content {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -314,7 +318,7 @@ html, body {
   height: 100%;
   overflow: auto;
 }
-/* line 212, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 #modes .mode.off .tab {
   -webkit-transition: border-right 0.01s 1s;
   -webkit-transition-delay: ease-out;
@@ -324,11 +328,11 @@ html, body {
   border-right: 1px solid transparent;
   border-left: 1px solid #433a41;
 }
-/* line 216, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 #modes .mode.off .tab h1:before {
   display: none;
 }
-/* line 220, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 #modes .mode.off .content {
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -337,13 +341,13 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 228, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #modes .mode:nth-child(2) {
   width: -webkit-calc(100% - ( 0em) );
   width: -moz-calc(100% - ( 0em) );
   width: calc(100% - ( 0em) );
 }
-/* line 238, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #modes .mode:nth-child(2).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -352,17 +356,17 @@ html, body {
   transform: translateX(100%);
   right: 7.2em;
 }
-/* line 244, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 #modes .mode:nth-child(2) .content {
   right: 4.8em;
 }
-/* line 228, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #modes .mode:nth-child(3) {
   width: -webkit-calc(100% - ( 2.4em) );
   width: -moz-calc(100% - ( 2.4em) );
   width: calc(100% - ( 2.4em) );
 }
-/* line 238, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #modes .mode:nth-child(3).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -371,17 +375,17 @@ html, body {
   transform: translateX(100%);
   right: 4.8em;
 }
-/* line 244, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 #modes .mode:nth-child(3) .content {
   right: 2.4em;
 }
-/* line 228, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #modes .mode:nth-child(4) {
   width: -webkit-calc(100% - ( 4.8em) );
   width: -moz-calc(100% - ( 4.8em) );
   width: calc(100% - ( 4.8em) );
 }
-/* line 238, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #modes .mode:nth-child(4).off {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -390,24 +394,24 @@ html, body {
   transform: translateX(100%);
   right: 2.4em;
 }
-/* line 244, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 #modes .mode:nth-child(4) .content {
   right: 0em;
 }
 
-/* line 253, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .section {
   width: 100%;
   height: 100%;
-  padding: 3em 10.2em 3em 3em;
+  padding: 3em 8.2em 3em 3em;
   overflow: auto;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .section.section--capture .video-container {
   position: relative;
 }
-/* line 263, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 .section.section--capture .video-container video {
   position: absolute;
   top: 0;
@@ -415,7 +419,7 @@ html, body {
   width: 100%;
   height: auto;
 }
-/* line 270, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .section.section--capture .video-container canvas {
   position: absolute;
   top: 0;
@@ -423,50 +427,50 @@ html, body {
   width: 100%;
   height: auto;
 }
-/* line 280, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 .section.section--capture .controls .debug-container canvas {
   width: 100%;
   height: auto;
 }
 
-/* line 289, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 .section.section--results .gesture-results--header {
   height: 3em;
   border-bottom: 1px solid #433a41;
   margin-bottom: 3em;
 }
-/* line 293, ../sass/screen.scss */
+/* line 298, ../sass/screen.scss */
 .section.section--results .gesture-results--header h1 {
   float: left;
   line-height: 3em;
 }
-/* line 297, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .section.section--results .gesture-results--header .toggle {
   float: right;
   padding: 0 2.5em;
 }
-/* line 303, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item {
   margin-bottom: 3em;
   overflow: hidden;
 }
-/* line 306, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .meta {
   height: 2em;
 }
-/* line 308, ../sass/screen.scss */
+/* line 313, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li {
   display: inline-block;
 }
-/* line 310, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li:after {
   content: ' / ';
 }
-/* line 312, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .meta li:after:last-child {
   content: '';
 }
-/* line 319, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .data li {
   float: left;
   width: 17.6%;
@@ -475,17 +479,17 @@ html, body {
   height: 100%;
   position: relative;
 }
-/* line 326, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .data li:last-child {
   margin-right: 0;
 }
-/* line 329, ../sass/screen.scss */
+/* line 334, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .data li img {
   display: block;
   width: 100%;
   height: auto;
 }
-/* line 336, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .section.section--results .gesture-results--list .gesture-results--snapshot-item .data.unprocessed .dynamic {
   border: 1px solid #c3b9c1;
 }

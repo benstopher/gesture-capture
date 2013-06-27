@@ -68,7 +68,7 @@ GestureResults.prototype = {
 		string += ' - ' + F.zeroPad( date.getHours(), 2);
 		string += ':' + F.zeroPad( date.getMinutes(), 2);
 		string += ':' + F.zeroPad( date.getSeconds(), 2);
-		string += ':' + F.zeroPad( date.getMilliseconds(), 2);
+		string += ':' + F.zeroPad( date.getMilliseconds(), 4);
 		return string;
 	},
 	render: function(){

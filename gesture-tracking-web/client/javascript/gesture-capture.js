@@ -1,3 +1,16 @@
+Template['existing-results'].results = function(){
+	console.log( TrackingSessions.find({}).fetch() );
+	return TrackingSessions.find({}).fetch();
+};
+
+Template['existing-results'].events({
+	'click .result-id': function( e ){
+		e.preventDefault();
+		var id = $( e.target ).attr('href').replace('#result-', '');
+		Session.set( "currentTrackingSession", id );
+	}
+});
+
 GestureCapture = function( options ){
 	var that = this;
 	this.options = $.extend({
@@ -103,7 +116,8 @@ GestureCapture.prototype = {
 		this.$toggleMarkers.click( function(){
 			$(this).toggleClass('on');
 			that.isShowMarkers = !that.isShowMarkers;
-		})
+		});
+
 	},
 	updateCollectionData: function(){		
 		var that = this;

@@ -29,14 +29,24 @@
 			
 		</div>
 		<div class="controls column">
-			<h2>Controls</h2>
+			<h2>Capture New</h2>
 			<a class="has-loader toggle toggle-capture">Capture</a>
 			<a class="toggle toggle-markers">Show Markers</a>
+			<h2>Previous Sessions</h2>
+			<ul class="previous">
+				{{> existing-results}}
+			</ul>
 			<div class="debug-container">
 				
 			</div>
 		</div>
 	</article>
+</template>
+
+<template name="existing-results">
+	{{#each results}}
+		<li><a href="#result-{{this._id}}" class="result-id">{{ this.startTime }}</a></li>
+	{{/each}}
 </template>
 
 <template name="gesture-results">
