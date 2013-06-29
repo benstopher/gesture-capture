@@ -35,7 +35,10 @@ Meteor.startup( function(){
 	GT.nav.init();
 
 	GT.capture = new GestureCapture({
-		ele: '#gesture-capture'
+		ele: '#gesture-capture',
+		capture: {
+			snapshotInterval: 1000
+		}
 	});
 
 	GT.results = new GestureResults({
