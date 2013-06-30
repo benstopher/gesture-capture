@@ -41,10 +41,23 @@ GestureAnalysis.prototype = {
 				$btn.removeClass( 'loading on' );
 			});
 		});
+		this.$ele.find( '.gesture-analysis--graph-container .toggle' ).addClass('on');
+		this.$ele.find( '.gesture-analysis--graph-container .toggle' ).click( function( e ){
+			e.preventDefault();
+			var $target = $( $(this).attr('href') );
+			if( $(this).hasClass('on') ){
+				$(this).removeClass('on');
+				d3.select( $target[0] ).style( 'display', 'none' );
+			} else {
+				$(this).addClass('on');
+				d3.select( $target[0] ).style( 'display', 'block' );
+			}
+		});
 	},
 	updateSession: function( sessionID ){
 		var id = sessionID || Session.get( "currentTrackingSession" );
 		this.session = TrackingSessions.findOne( { _id: id } );
+		this.$ele.find( '.gesture-analysis--graph-container .toggle' ).addClass('on');
 	},
 	parseData: function(){
 		this.speedGraph.data = [];
@@ -148,6 +161,7 @@ GestureAnalysis.prototype = {
 	},
 	renderSpeedGraph: function( ){
 		var node = this.speedGraph.$ele;
+		node.empty();
 		var height = this.options.graph.height;
 		var width = node.width();
 		var svg = d3.select( node[0] )
@@ -191,6 +205,7 @@ GestureAnalysis.prototype = {
 	},
 	renderDistanceGraph: function( ){
 		var node = this.distanceGraph.$ele;
+		node.empty();
 		var height = this.options.graph.height;
 		var width = node.width();
 		var svg = d3.select( node[0] )
@@ -234,6 +249,7 @@ GestureAnalysis.prototype = {
 	},
 	renderPositionGraph: function( ){
 		var node = this.positionGraph.$ele;
+		node.empty();
 		var height = this.options.graph.height;
 		var width = node.width();
 		var svg = d3.select( node[0] )

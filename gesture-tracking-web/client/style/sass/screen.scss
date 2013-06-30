@@ -28,6 +28,12 @@ $tab_count: 3;
 	@include box-sizing( border-box );
 }
 
+svg{
+	*.hide{
+		opacity: 0;
+	}
+}
+
 a{
 	text-decoration: none;
 	color: $colour_action;	
@@ -356,6 +362,13 @@ html, body{
 				height: 3em;
 				line-height: 3em;
 				border-bottom: 1px solid $colour_grey_dark;
+				h1{
+					float: left;
+				}
+				.toggle{
+					float: right;
+					margin-left: 1em;
+				}
 
 			}
 			.graph{
