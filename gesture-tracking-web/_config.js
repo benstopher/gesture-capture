@@ -4,6 +4,8 @@ DEBUG = false;
 
 CONF = {};
 
+CONF.MarkerNames = [ 'left1', 'right1', 'left2', 'right2' ];
+
 // styling, naming and association info for markers
 CONF.MarkerNameToId = {
 	'left1': 0,

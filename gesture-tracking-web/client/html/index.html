@@ -59,7 +59,7 @@
 </template>
 
 <template name="gesture-results--list">
-	<header class="gesture-results--header">
+	<header class="gesture-results--header info-page--header">
 		<h1>{{ title.timestamp }} / {{ title.humanTime }}</h1>
 		<a class="toggle toggle-render has-loader">Render Results</a>
 	</header>
@@ -97,11 +97,50 @@
 
 <template name="gesture-analysis">
 	<a href="" class="tab">
-		<h1>Analysis</h1>
+		<h1>Analysis</h1>	
 	</a>
-	<article class="content section section--analysis">
-		
+	<article id="gesture-analysis" class="content section section--analysis">
+		<header class="gesture-analysis--header info-page--header">
+			<h1>{{ title.timestamp }} / {{ title.humanTime }}</h1>
+			<a class="toggle toggle-analysis has-loader">Render Analysis</a>
+		</header>
+		{{> gesture-analysis--list}}
 	</article>
+</template>
+
+<template name="gesture-analysis--list">
+	<ul class="gesture-analysis--list">
+		<li class="gesture-analysis--graph-container position-graph">
+			<header class="data">
+				<h1>Positions</h1>
+			</header>
+			<section class="graph position-graph">
+				{{#constant}}
+					<!-- D3 stuff goes here -->
+				{{/constant}}
+			</section>
+		</li>
+		<li class="gesture-analysis--graph-container speed-graph">
+			<header class="data">
+				<h1>Movement Speed</h1>
+			</header>
+			<section class="graph speed-graph">
+				{{#constant}}
+					<!-- D3 stuff goes here -->
+				{{/constant}}
+			</section>
+		</li>
+		<li class="gesture-analysis--graph-container distance-graph">
+			<header class="data">
+				<h1>Movement Distance</h1>
+			</header>
+			<section class="graph distance-graph">
+				{{#constant}}
+					<!-- D3 stuff goes here -->
+				{{/constant}}
+			</section>
+		</li>
+	</ul>
 </template>
 
 <template name="introduction">

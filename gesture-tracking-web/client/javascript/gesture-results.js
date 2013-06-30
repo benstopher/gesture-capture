@@ -125,7 +125,7 @@ GestureResults.prototype = {
 			this.initUI();
 
 		} else {
-			console.log( 'Cannot render this session: there isn\'t one' );
+			console.log( 'Results Cannot render this session: there isn\'t one' );
 		}
 	}
 };

@@ -153,6 +153,20 @@ html, body{
 	}
 }
 
+.info-page--header{
+	height: 3em;
+	border-bottom: 1px solid $colour_grey_dark;
+	margin-bottom: 3em;
+	h1{
+		float: left;
+		line-height: 3em;
+	}
+	.toggle{
+		float: right;
+		padding: 0 2.5em;
+	}
+}
+
 #modes{	
 	width:100%;
 	height: 100%;
@@ -291,19 +305,6 @@ html, body{
 }
 
 .section.section--results{
-	.gesture-results--header{
-		height: 3em;
-		border-bottom: 1px solid $colour_grey_dark;
-		margin-bottom: 3em;
-		h1{
-			float: left;
-			line-height: 3em;
-		}
-		.toggle{
-			float: right;
-			padding: 0 2.5em;
-		}
-	}
 	.gesture-results--list{
 		.gesture-results--snapshot-item{
 			margin-bottom: 3em;
@@ -342,6 +343,23 @@ html, body{
 						border: 1px solid $colour_grey;
 					}
 				}
+			}
+		}
+	}
+}
+
+.section.section--analysis{
+	.gesture-analysis--list{
+		.gesture-analysis--graph-container{
+			margin-bottom: 3em;
+			.data{
+				height: 3em;
+				line-height: 3em;
+				border-bottom: 1px solid $colour_grey_dark;
+
+			}
+			.graph{
+
 			}
 		}
 	}
